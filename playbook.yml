@@ -1,4 +1,3 @@
-tasks:
-    - name: Print message
+- name: Print message
       debug:
         msg: Hello Ansible World
