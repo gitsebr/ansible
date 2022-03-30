@@ -1,4 +1,4 @@
-- name: Installation HTTPD
+- name: Installation du service HTTPD
   hosts: all
   become: true
   tasks:
@@ -7,10 +7,27 @@
         name:
           - httpd
         state: latest
+        
     - name: Ensure httpd service is running
       systemd:
         name: httpd
         state: restarted
         enabled: yes
-
-   
+        
+    - name: permit traffic in default zone for https service
+      ansible.posix.firewalld:
+       service: https
+       permanent: yes
+       state: enabled
+    
+    - name: permit traffic in default zone for https service
+      ansible.posix.firewalld:
+       service: https
+       permanent: yes
+       state: enabled
+    
+    - name: Firewalld service restart
+      systemd:
+        name: firewalld
+        state: restarted
+        enabled: yes
