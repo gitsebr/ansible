@@ -5,3 +5,5 @@
       dnf:
        name: "*"
        state: latest
+     - name: Reboot now !!
+       reboot:
