@@ -14,9 +14,9 @@
         state: restarted
         enabled: yes
         
-    - name: permit traffic in default zone for https service
+    - name: permit traffic in default zone for http service
       ansible.posix.firewalld:
-       service: https
+       service: http
        permanent: yes
        state: enabled
     
