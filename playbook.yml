@@ -9,7 +9,7 @@
         state: latest
     - name: Ensure httpd service is running
       systemd:
-        name: mysqld
+        name: httpd
         state: restarted
         enabled: yes
 
