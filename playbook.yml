@@ -1,4 +1,4 @@
-- name: Upgrade all packages
-  dnf:
-    name: "*"
-    state: latest
+tasks:
+    - name: Print message
+      debug:
+        msg: Hello Ansible World
