@@ -6,6 +6,9 @@
       dnf:
         name:
           - httpd
+          - mariadb-server
+          - php
+          - php-mysqlnd
         state: latest
         
     - name: Ensure httpd service is running
