@@ -39,3 +39,5 @@
         name: firewalld
         state: restarted
         enabled: yes
+    - name: Reboot
+      reboot:
