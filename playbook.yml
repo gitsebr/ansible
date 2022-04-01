@@ -3,18 +3,18 @@
   become: true
   tasks:
    - name: Update all paquages
-      yum:
-       name: "*"
-       state: latest
-   
+     dnf:
+      name: "*"
+      state: latest
+       
    - name: Packages install
-      dnf:
-        name:
-          - httpd
-          - mariadb-server
-          - php
-          - php-mysqlnd
-        state: latest
+     dnf:
+       name:
+         - httpd
+         - mariadb-server
+         - php
+         - php-mysqlnd
+       state: latest
         
     - name: Verification httpd service is running
       systemd:
