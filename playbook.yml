@@ -21,7 +21,7 @@
       lineinfile:
        dest: /etc/httpd/conf.d/phpMyAdmin.conf
        regexp: '^Require local'
-       line: '\1Require ip 127.0.0.1 192.168.1.0/24\2'
+       replace: '\1Require ip 127.0.0.1 192.168.1.0/24\2'
         
     - name: Verification httpd service is running
       systemd:
