@@ -1,8 +1,13 @@
-- name: Installation du service HTTPD
+- name: Installation du service HTTPD | MariaDB | Php8.0
   hosts: all
   become: true
   tasks:
-    - name: packages install
+    -name: Mise à jour de tous les paquages
+     dnf:
+      name: "*"
+      state: latest
+   
+   - name: Packages install
       dnf:
         name:
           - httpd
@@ -11,7 +16,7 @@
           - php-mysqlnd
         state: latest
         
-    - name: Ensure httpd service is running
+    - name: Verification httpd service is running
       systemd:
         name: httpd
         state: restarted
