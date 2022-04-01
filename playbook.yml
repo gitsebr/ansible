@@ -3,9 +3,9 @@
   become: true
   tasks:
    - name: Update all paquages
-     dnf:
-      name: "*"
-      state: latest
+      dnf:
+       name: "*"
+       state: latest
    
    - name: Packages install
       dnf:
