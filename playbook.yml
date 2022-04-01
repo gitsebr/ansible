@@ -18,10 +18,9 @@
         state: latest
     
     - name: Modification PhpMyAdmin
-      copier:
+      copy:
        src: phpMyAdmin.conf
-       dest: /etc/httpd/conf.d/phpMyAdmin.conf
-       sauvegarde: oui 
+       dest: /etc/httpd/conf.d/phpMyAdmin.conf 
         
     - name: Verification httpd service is running
       systemd:
