@@ -14,7 +14,9 @@
           - mariadb-server
           - php
           - php-mysqlnd
+          - phpMyAdmin
         state: latest
+    
     - name: Modification PhpMyAdmin
         lineinfile:
           dest: /etc/httpd/conf.d/phpMyAdmin.conf
