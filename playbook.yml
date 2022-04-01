@@ -3,7 +3,7 @@
   become: true
   tasks:
    - name: Update all paquages
-      dnf:
+      yum:
        name: "*"
        state: latest
    
