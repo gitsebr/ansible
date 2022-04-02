@@ -19,12 +19,12 @@
     
     - name: Modification PhpMyAdmin
       copy:
-       src: phpMyAdmin.conf
+       src: conf/phpMyAdmin.conf
        dest: /etc/httpd/conf.d/phpMyAdmin.conf 
     
     - name: Fichier index.php
       copy:
-       src: index.php
+       src: conf/index.php
        dest: /var/www/html/index.php
     
     - name: Verification httpd service is running
@@ -41,7 +41,7 @@
         
     - name: Script Configuration Mysql
       copy:
-       src: mysql_config.sh
+       src: scripts/mysql_config.sh
        dest: /home/jenkins/mysql_config.sh
        mode: '0755'
        
