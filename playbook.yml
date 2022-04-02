@@ -36,8 +36,17 @@
     - name: Start mariadb service
       systemd:
         name: mariadb
-        state: started
+        state: start
         enabled: yes
+        
+    - name: Script Configuration Mysql
+      copy:
+       src: mysql_config.sh
+       dest: /home/jenkins/mysql_config.sh
+       mode: '0755'
+       
+    - name: Execute mysql_config.sh
+      command: bash /home/jenkins/mysql_config.sh
         
     - name: permit traffic in default zone for http service
       ansible.posix.firewalld:
