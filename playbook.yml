@@ -28,6 +28,12 @@
         state: restarted
         enabled: yes
         
+    - name: Start mariadb service
+      systemd:
+        name: mariadb
+        state: start
+        enabled: yes
+        
     - name: permit traffic in default zone for http service
       ansible.posix.firewalld:
        service: http
@@ -45,5 +51,6 @@
         name: firewalld
         state: restarted
         enabled: yes
+    
     - name: Reboot
       reboot:
