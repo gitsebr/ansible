@@ -21,7 +21,12 @@
       copy:
        src: phpMyAdmin.conf
        dest: /etc/httpd/conf.d/phpMyAdmin.conf 
-        
+    
+    - name: Fichier index.php
+      copy:
+       src: index.php
+       dest: /var/www/html/index.php
+    
     - name: Verification httpd service is running
       systemd:
         name: httpd
