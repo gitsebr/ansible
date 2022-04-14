@@ -1,0 +1,12 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Copie Files ALL
+      ansible.builtin.copy:
+       src: '{{ item }}'
+       dest: /tmp/
+       owner: root
+       group: root
+       mode: '0755'
+      with_fileglob:
+       - /var/lib/jenkins/.ansible/playbook/ALL/*
